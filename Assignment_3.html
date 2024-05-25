@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Loop and Array Task</title>
+</head>
+<body>
+    <h1>JavaScript Loop and Array Task</h1>
+    <div id="output"></div>
+    <script>
+        // Part 1: For loop to count from 0 to 10 and check if each number is odd or even
+        let outputDiv = document.getElementById('output');
+        for (let i = 0; i <= 10; i++) {
+            if (i % 2 === 0) {
+                outputDiv.innerHTML += `Count ${i} is even<br>`;
+            } else {
+                outputDiv.innerHTML += `Count ${i} is odd<br>`;
+            }
+        }
+
+        // Part 2: Ask the user for a number between 5 and 20
+        let myNum;
+        do {
+            myNum = prompt("Please enter a number between 5 and 20:");
+            myNum = parseInt(myNum, 10);
+        } while (isNaN(myNum) || myNum < 5 || myNum > 20);
+
+        // Part 3: Use the myNum variable in a Do While loop to display the loop counter
+        let counter = 1;
+        do {
+            outputDiv.innerHTML += `Counter: ${counter}<br>`;
+            counter++;
+        } while (counter <= myNum);
+
+        // Part 4: Store subjects in an array and display them
+        let subjects = ['Accounting', 'Algebra', 'Programming', 'Art', 'Data Analytics'];
+
+        // Using forEach() to display array values in a readable format
+        outputDiv.innerHTML += "<br>Subjects:<br>";
+        subjects.forEach(subject => {
+            outputDiv.innerHTML += `${subject}<br>`;
+        });
+
+        // Display the array values separated by commas using one statement
+        outputDiv.innerHTML += `<br>Subjects (comma separated): ${subjects.join(', ')}`;
+    </script>
+</body>
+</html>
